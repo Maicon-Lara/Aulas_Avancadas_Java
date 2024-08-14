@@ -1,6 +1,6 @@
 package entities;
 
-public class SavingsAccount extends Account{
+public  class SavingsAccount extends Account{
 	
 	private Double interestRate;
 	
@@ -17,12 +17,17 @@ public class SavingsAccount extends Account{
 		return interestRate;
 	}
 
-	public void setInterestRate(Double SavingsAccount) {
+	public void setInterestRate(Double interestRate) {
 		this.interestRate = interestRate;
 	}
 	
 	public void updateBalance() {
 		balance += balance * interestRate;
+	}
+	
+	@Override
+	public  void withdraw(Double amount) {
+		balance -= amount;
 	}
 
 }
