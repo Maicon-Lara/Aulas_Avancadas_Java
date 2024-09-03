@@ -22,7 +22,7 @@ public class Program {
 
 		for (int i = 0; i < n; i++) {
 
-			Employee employee = new Employee();
+			//Employee employee = new Employee();
 
 			System.out.println("Employee #" + (i + 1) + " data:");
 			System.out.print("Outsourced (y/n)? ");
