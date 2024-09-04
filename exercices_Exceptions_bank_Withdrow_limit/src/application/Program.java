@@ -12,28 +12,28 @@ public class Program {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
+		System.out.println("Enter accont data");
+		System.out.print("Number: ");
+		Integer number = sc.nextInt();
+		sc.nextLine();
+		System.out.print("Holder: ");
+		String holder = sc.nextLine();
+		System.out.print("Initial balance: ");
+		Double balance = sc.nextDouble();
+		System.out.print("Withdraw limit: ");
+		Double withdrawLimit = sc.nextDouble();
+
+		Account acc = new Account(number, holder, balance, withdrawLimit);
+		System.out.println();
+		System.out.print("Enter amount for withdraw: ");
+		Double amount = sc.nextDouble();
+
 		try {
-				System.out.println("Enter accont data");
-				System.out.print("Number: ");
-				Integer number = sc.nextInt();
-				sc.nextLine();
-				System.out.print("Holder: ");
-				String holder = sc.nextLine();
-				System.out.print("Initial balance: ");
-				Double balance = sc.nextDouble();
-				System.out.print("Withdraw limit: ");
-				Double withdrawLimit = sc.nextDouble();
-				
-				Account acc = new Account(number, holder, balance, withdrawLimit);
-				
-				System.out.print("Enter amount for withdraw: ");
-				Double amount = sc.nextDouble();
-				
-				acc.withdraw(amount);
-				
-				System.out.printf("New balance: " +String.format("%.2f", acc.getBalance()));
-		} 
+			acc.withdraw(amount);
+			System.out.printf("New balance: %.2f%n", acc.getBalance());
+		}
+
 		catch (DomainException e) {
 			System.out.println("Withdraw error: " + e.getMessage());
 		}
